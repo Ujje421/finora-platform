@@ -159,8 +159,9 @@ def create_app() -> FastAPI:
         try:
             import redis.asyncio as aioredis
             r = aioredis.from_url(settings.redis_url)
-            await r.ping()
-            redis_status = "healthy"
+            pong = await r.ping()  # type: ignore[misc]
+            if pong:
+                redis_status = "healthy"
             await r.aclose()
         except Exception as e:
             redis_status = f"unhealthy: {str(e)}"
