@@ -107,6 +107,3 @@ financial-terminal/
 4. **"I Don't Know"**: When evidence is insufficient, the system says so explicitly.
 5. **Audit Trail**: Every tool call, query, and model invocation is logged with trace_id.
 
-## License
-
-Private — Not open source.
